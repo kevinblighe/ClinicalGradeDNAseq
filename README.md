@@ -21,11 +21,13 @@ This pipeline has been modified from the original version and proceeds in a 9-st
   </ol></li>
 </ol>
       
-<h1>Required input</h1>
+<h1>Requirements</h1>
 <ul>
   <li>Paired-end FASTQ files</li>
 <li>Chromosome ordered BED file in hg19 / hg38</li>
 <li>The first column within all BED files must be in the format ‘chr1’, ‘chr22’, etc. BED files can be sorted with sort -k1,1V -k2,2n</li>
+  <li>Global installations of Cutadapt and unix2dos (included in dos2unix)</li>
+  <li>Valid credentials for returning reults files to remote server (username / password)</li>
 </ul>
 
 <h1>Execution</h1>
@@ -72,9 +74,10 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
 
 <h1>Hard-coded sections of code</h1>
 <ul>
-  <li>PipelineWrapper.sh, line 120: <i>/home/ubuntu/pipeline/AnalysisMasterVersion1.sh "${Read1}" "${Read2}" "${Ref_FASTA}" "${RunNumber}" "${PatientID}" "${BEDfile}" "${TrimmingQualityReadEnds}" "${TrimmingReadLengthMin}" "${TrimmingAdaptor}" "${FilterReadDepthCutoff}" "${FilterMappingQualityCutOff}" "${CallingStringency}" "${Results_root}" "${User}" &> "${Results_root}"/"${RunNumber}"/"${PatientID}"/Master.log ;</i> - absolute path filename for AnalysisMasterVersion1.sh</li>
+  <li>PipelineWrapper.sh, line 120: <i>/home/ubuntu/pipeline/AnalysisMasterVersion1.sh "${Read1}" "${Read2}" ... ;</i> - absolute path filename for AnalysisMasterVersion1.sh</li>
   <li>PipelineWrapper.sh, line 127: <i>remoteDir="/remote/SAMBA/share/" ;</i> - Remote server directory to which results files will be transferred via sFTP</li>
   <li>PipelineWrapper.sh, line 139, 150: <i>sshpass -e sftp $username@XXX.XXX.XXX.XXX << !</i> - Remote server IP address or host name to which results files will be transferred via sFTP</li>
+    <li>AnalysisMasterVersion1.sh, lines 25-35 - root directories (absolute paths) of required programs</li>
 </ul>
 
 
