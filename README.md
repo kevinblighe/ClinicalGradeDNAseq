@@ -12,8 +12,7 @@ This pipeline has been modified from the original version and proceeds in a 9-st
 <li>Downsampling / random read sampling - Picard (Broad Institute of MIT and Harvard)</li>
 <li>Variant calling - SAMtools/BCFtools (Li et al., 2009)</li>
 <li>Annotation - Variant Effect predictor (McLaren et al., 2016)</li>
-<li>*Customising VCF - custom scripts
-NB - step 9 uses a Python script and specifically performs the following:
+<li>Customising VCF - custom scripts. This step uses a Python script (FixInDels.py) and specifically performs the following:
   <ol type="i">  
     <li>Splits multiallelic sites</li>
     <li>Sets VCF ID field to a unique value CHR:POS:REF:ALT:ZYGOSITY</li>
