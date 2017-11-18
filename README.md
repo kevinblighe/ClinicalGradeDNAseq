@@ -12,7 +12,7 @@ This pipeline has been modified from the original version and proceeds in a 9-st
 <li>Downsampling / random read sampling - Picard (Broad Institute of MIT and Harvard)</li>
 <li>Variant calling - SAMtools/BCFtools (Li et al., 2009)</li>
 <li>Annotation - Variant Effect predictor (McLaren et al., 2016)</li>
-<li>Customising VCF for haplotype identification - custom scripts</li>
+<li>Customising VCF (modifying indels; setting ID field to unique identifier; marking low quality variants) - custom scripts</li>
 </ol>
 
 <h1>Required input</h1>
@@ -63,13 +63,15 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
 <li>*_PerBaseDepthBED.bedgraph - per base read depth for each base in each region specified in supplied BED file</li>
 <li>*_Aligned_Sorted_PCRDuped_FiltMAPQ.bam - aligned BAM file with sorted reads, PCR duplicates removed, and reads below mapping quality threshold removed</li>
 <li>*_Aligned_Sorted_PCRDuped_FiltMAPQ.bam.bai - index for above BAM file</li>
-<li>*_Final.vcf - final VCF file, which contains all variants that passed QC</li>
+<li>*_Final.vcf - final VCF file, which contains all variants that passed QC, and low quality ones marked as such</li>
 <li>*_AnnotationVEP.html - HTML report of variant annotation, with consequences for all known transcript isoforms</li>
 <li>*_AnnotationVEP.tsv - as above but in tab-separated values (TSV) format</li>
 </ul>
 
+<h1>Hard-coded sections of code</h1>
 
-# References
+
+<h1>References</h1>
 <ul>
   <li>Andrews S, FastQC, https://www.bioinformatics.babraham.ac.uk/projects/fastqc/, last accessed 28th August 2017.</li>
 <li>Blighe K, Beauchamp N, Allen KE, Nesbitt IM, Dawe J, Grafham D, Dalton A (2014), Next Generation Sequencing in the National Health Service England: A Pipeline that Completely Agrees with Sanger, Journal of Cancer Science and Therapy 6: 406-410.</li>
