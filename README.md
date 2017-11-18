@@ -30,18 +30,14 @@ This pipeline has been modified from the original version and proceeds in a 9-st
 
 <h1>Execution</h1>
 <ol type="1">
-Run the ‘PipelineKevin’ wrapper script, which will check command-line parameters, execute the master script, and then return results files via sFTP to remote server (password must be supplied). Use the following parameters:
+Run the ‘PipelineWrapper’ wrapper script, which will check command-line parameters, execute the master script, and then return results files via sFTP to remote server (password must be supplied). Use the following parameters:
 <ol type="i"">
 <li>FASTQ mate-pair 1 (absolute file path)</li>
 <li>FASTQ mate-pair 2 (absolute file path)</li>
 <li>Reference genome FASTA (absolute file path)</li>
-<li>Plate number (e.g. Placa6, Placa7, etc.) (alphanumeric)</li>
+<li>Run number (e.g. Plate6, Plate7, etc.) (alphanumeric)</li>
 <li>Patient ID (alphanumeric)</li>
 <li>BED file (absolute file path)</li>
-<li>PCR results CSV file (absolute file path)</li>
-<li>PCR results reference patient ID (alphanumeric)</li>
-<li>PCR results relative copy number gain cutoff (float)</li>
-<li>PCR results relative copy number loss cutoff (float)</li>
 <li>Minimum quality for bases at read ends, below which bases will be cut (integer)</li>
 <li>Minimum allowed read length (integer)</li>
 <li>Adaptor for trimming off read ends ('illumina' / 'nextera' / 'small_rna')</li>
@@ -50,28 +46,28 @@ Run the ‘PipelineKevin’ wrapper script, which will check command-line parame
 <li>Stringency for calling variants ('relaxed' / 'normal')</li>
 <li>Directory where results will be output (absolute file path)</li>
 <li>User initials (alphanumeric)</li>
-             </ol>
+</ol>
 
 <h1>Output</h1>
 Results files are output locally to <i>[results root]/[run number]/[sample ID]/</i>, with a copy being also sent via sFTP to a remote server.
 <ul>
-  <li>*_AnalysisLog.txt - analysis log (short)</li>
-<li>Master.log - analysis log (comprehensive)</li>
-<li>*_R1_001.fastq.gz_trimming_report.txt - details on base and read trimming for mate-pair 1</li>
-<li>*_R1_001_val_1_fastqc.html - FastQC report for mate-pair 1 (after trimming)</li>
-<li>*_R2_001.fastq.gz_trimming_report.txt - details on base and read trimming for mate-pair 2</li>
-<li>*_R2_001_val_2_fastqc.html - FastQC report for mate-pair 2 (after trimming)</li>
-<li>*_Alignment.txt - alignment metrics</li>
-<li>*_ReadsOffTarget.txt - number of reads falling outside regions specified in BED file</li>
-<li>*_PCRDuplicates.txt - details on identified PCR duplicates</li>
-<li>*_CoverageTotal.bedgraph - coverage for all mapped locations (contiguous bases at same read depth are merged into regions)</li>
-<li>*_MeanCoverageBED.bedgraph - mean read depth for each region specified in supplied BED file</li>
-<li>*_PerBaseDepthBED.bedgraph - per base read depth for each base in each region specified in supplied BED file</li>
-<li>*_Aligned_Sorted_PCRDuped_FiltMAPQ.bam - aligned BAM file with sorted reads, PCR duplicates removed, and reads below mapping quality threshold removed</li>
-<li>*_Aligned_Sorted_PCRDuped_FiltMAPQ.bam.bai - index for above BAM file</li>
-<li>*_Final.vcf - final VCF file, which contains all variants that passed QC, and low quality ones marked as such</li>
-<li>*_AnnotationVEP.html - HTML report of variant annotation, with consequences for all known transcript isoforms</li>
-<li>*_AnnotationVEP.tsv - as above but in tab-separated values (TSV) format</li>
+  <li><i>*_AnalysisLog.txt</i> - analysis log (short)</li>
+<li><i>Master.log</i> - analysis log (comprehensive)</li>
+<li><i>*_R1_001.fastq.gz_trimming_report.txt</i> - details on base and read trimming for mate-pair 1</li>
+<li><i>*_R1_001_val_1_fastqc.html</i> - FastQC report for mate-pair 1 (after trimming)</li>
+<li><i>*_R2_001.fastq.gz_trimming_report.txt</i> - details on base and read trimming for mate-pair 2</li>
+<li><i>*_R2_001_val_2_fastqc.html</i> - FastQC report for mate-pair 2 (after trimming)</li>
+<li><i>*_Alignment.txt</i> - alignment metrics</li>
+<li><i>*_ReadsOffTarget.txt</i> - number of reads falling outside regions specified in BED file</li>
+<li><i>*_PCRDuplicates.txt</i> - details on identified PCR duplicates</li>
+<li><i>*_CoverageTotal.bedgraph</i> - coverage for all mapped locations (contiguous bases at same read depth are merged into regions)</li>
+<li><i>*_MeanCoverageBED.bedgraph</i> - mean read depth for each region specified in supplied BED file</li>
+<li><i>*_PerBaseDepthBED.bedgraph</i> - per base read depth for each base in each region specified in supplied BED file</li>
+<li><i>*_Aligned_Sorted_PCRDuped_FiltMAPQ.bam</i> - aligned BAM file with sorted reads, PCR duplicates removed, and reads below mapping quality threshold removed</li>
+<li><i>*_Aligned_Sorted_PCRDuped_FiltMAPQ.bam.bai</i> - index for above BAM file</li>
+<li><i>*_Final.vcf</i> - final VCF file, which contains all variants that passed QC, and low quality ones marked as such</li>
+<li><i>*_AnnotationVEP.html</i> - HTML report of variant annotation, with consequences for all known transcript isoforms</li>
+<li><i>*_AnnotationVEP.tsv</i> - as above but in tab-separated values (TSV) format</li>
 </ul>
 
 <h1>Hard-coded sections of code</h1>
