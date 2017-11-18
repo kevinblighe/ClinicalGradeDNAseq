@@ -15,14 +15,14 @@ This pipeline has been modified from the original version and proceeds in a 9-st
 <li>Customising VCF for haplotype identification - custom scripts</li>
 </ol>
 
-# Required input
+<h1>Required input</h1>
 <ul>
   <li>Paired-end FASTQ files</li>
 <li>Chromosome ordered BED file in hg19 / hg38</li>
 <li>The first column within all BED files must be in the format ‘chr1’, ‘chr22’, etc. BED files can be sorted with sort -k1,1V -k2,2n</li>
 </ul>
 
-# Execution
+<h1>Execution</h1>
 <ol type="1">
 Run the ‘PipelineKevin’ wrapper script, which will check command-line parameters, execute the master script, and then return results files via sFTP to remote server (password must be supplied). Use the following parameters:
 <ol type="i"">
@@ -46,7 +46,7 @@ Run the ‘PipelineKevin’ wrapper script, which will check command-line parame
 <li>User initials (alphanumeric)</li>
              </ol>
 
-# Output
+<h1>Output</h1>
 Results files are output locally to <i>[results root]/[run number]/[sample ID]/</i>, with a copy being also sent via sFTP to a remote server.
 <ul>
   <li>*_AnalysisLog.txt - analysis log (short)</li>
@@ -63,10 +63,9 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
 <li>*_PerBaseDepthBED.bedgraph - per base read depth for each base in each region specified in supplied BED file</li>
 <li>*_Aligned_Sorted_PCRDuped_FiltMAPQ.bam - aligned BAM file with sorted reads, PCR duplicates removed, and reads below mapping quality threshold removed</li>
 <li>*_Aligned_Sorted_PCRDuped_FiltMAPQ.bam.bai - index for above BAM file</li>
-<li>*_Final.vcf - final VCF file, which contains all variants that passed QC and PCR results (if supplied)</li>
-<li>*_IGV.vcf - as above but designed for loading into Integrated Genomics Viewer</li>
+<li>*_Final.vcf - final VCF file, which contains all variants that passed QC</li>
 <li>*_AnnotationVEP.html - HTML report of variant annotation, with consequences for all known transcript isoforms</li>
-  <li>*_AnnotationVEP.tsv - as above but in tab-separated values (TSV) format</li>
+<li>*_AnnotationVEP.tsv - as above but in tab-separated values (TSV) format</li>
 </ul>
 
 
