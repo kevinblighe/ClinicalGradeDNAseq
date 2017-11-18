@@ -37,7 +37,7 @@ This pipeline has been modified from the original version and proceeds in a 9-st
 
 <h1>Execution</h1>
 <ol type="1">
-Run the ‘PipelineWrapper’ wrapper script, which will check command-line parameters, execute the master script, and then return results files via sFTP to remote server (password must be supplied). Use the following parameters:
+Run the ‘PipelineWrapper’ wrapper script, which will check command-line parameters, execute the master script, and then return results files via SSH/sFTP to remote server. Use the following parameters:
 <ol type="i"">
 <li>FASTQ mate-pair 1 (absolute file path)</li>
 <li>FASTQ mate-pair 2 (absolute file path)</li>
