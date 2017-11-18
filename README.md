@@ -32,7 +32,7 @@ This pipeline has been modified from the original version and proceeds in a 9-st
 <li>Chromosome ordered BED file in hg19 / hg38</li>
 <li>The first column within all BED files must be in the format ‘chr1’, ‘chr22’, etc. BED files can be sorted with sort -k1,1V -k2,2n</li>
   <li>Global installations of Cutadapt and unix2dos (included in dos2unix)</li>
-  <li>Valid credentials for returning reults files to remote server (username / password)</li>
+  <li>Valid credentials for returning results files to remote server (username / password) via SSH/sFTP</li>
 </ul>
 
 <h1>Execution</h1>
