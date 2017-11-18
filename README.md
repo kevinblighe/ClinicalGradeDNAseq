@@ -12,9 +12,18 @@ This pipeline has been modified from the original version and proceeds in a 9-st
 <li>Downsampling / random read sampling - Picard (Broad Institute of MIT and Harvard)</li>
 <li>Variant calling - SAMtools/BCFtools (Li et al., 2009)</li>
 <li>Annotation - Variant Effect predictor (McLaren et al., 2016)</li>
-<li>Customising VCF (modifying indels; setting ID field to unique identifier; marking low quality variants) - custom scripts</li>
-</ol>
+<li>*Customising VCF - custom scripts</li>
+   NB - step 9 uses a Python script and specifically performs the following:
 
+    <ol type="i">  
+  <li>Splits multiallelic sites</li>
+  <li>Sets VCF ID field to a unique value CHR:POS:REF:ALT:ZYGOSITY</li>
+  <li>Modifies insertions from (REF > ALT) <i>T > TGGA</i> to <i>- > GGA</i></li>
+  <li>Modifies insertions from (REF > ALT) <i>ACTAA > A</i> to <i>CTAA > -</i></li>
+      </ol>
+
+</ol>
+      
 <h1>Required input</h1>
 <ul>
   <li>Paired-end FASTQ files</li>
