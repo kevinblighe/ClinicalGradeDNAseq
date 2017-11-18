@@ -21,8 +21,8 @@ This pipeline has been modified from the original version and proceeds in a 9-st
   <ol type="i">  
     <li>Splits multiallelic sites</li>
     <li>Sets VCF ID field to a unique value CHR:POS:REF:ALT:ZYGOSITY</li>
-    <li>Modifies insertions from (REF > ALT) <i>T > TGGA</i> to <i>- > GGA</i>, and modifies base position accordingly</li>
-    <li>Modifies insertions from (REF > ALT) <i>ACTAA > A</i> to <i>CTAA > -</i>, and modifies base position accordingly</li>
+    <li>Modifies insertions from (REF > ALT) <i>T>TGGA</i> to <i>->GGA</i>, and modifies base position accordingly</li>
+    <li>Modifies insertions from (REF > ALT) <i>ACTAA>A</i> to <i>CTAA>-</i>, and modifies base position accordingly</li>
   </ol></li>
 </ol>
       
