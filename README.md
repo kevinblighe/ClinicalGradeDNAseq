@@ -1,7 +1,12 @@
 # ClinicalGradeDNAseq
 Automated next generation DNA sequencing analysis pipeline suited for clinical tests
 
-This clinical-grade analysis pipeline, ClinicalGradeDNAseq, is based on the work by Blighe, Beauchamp, and colleagues (Blighe et al., 2014) at Sheffield Diagnostic Genetics Service, Sheffield Children's National Health Service (NHS) Foundation Trust, Sheffield, UK, and their efforts to introduce a clinical-grade next generation sequencing (NGS) analysis pipeline fully validated against Sanger di-deoxy sequencing.
+This clinical-grade analysis pipeline, <i>ClinicalGradeDNAseq</i>, is based on the work by Blighe, Beauchamp, and colleagues (Blighe et al., 2014) at Sheffield Diagnostic Genetics Service, Sheffield Children's National Health Service (NHS) Foundation Trust, Sheffield, UK, and their efforts to introduce a clinical-grade next generation sequencing (NGS) analysis pipeline fully validated against Sanger di-deoxy sequencing.
+
+The pipeline is built using open source programs mixed with customised scripts. A wrapper script manages command line parameters and then executes the master analysis script. Control is then returned to the wrapper, where results files are transferred to a remote server via SSH/sFTP. A master and concise log is kept, with date- and time-stamps.
+
+The unique feature of the analysis pipeline that increases sensitivity to Sanger sequencing is in the variant calling step, where a final aligned BAM is split into 3 'sub-BAMs' of 75%, 50%, and 25% random reads. Variants are the called on all 4 BAMs and then the consensus VCF is produced.
+
 This pipeline has been modified from the original version and proceeds in a 9-step process:
 <ol type="1">
   <li>Adaptor and read quality trimming - TrimGalore! (Krueger F), FastQC (Andrews S), cutadapt (Martin M, 2011)</li>
