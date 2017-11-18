@@ -56,7 +56,7 @@ Run the ‘PipelineWrapper’ wrapper script, which will check command-line para
 </ol>
 
 <h1>Output</h1>
-Results files are output locally to <i>[results root]/[run number]/[sample ID]/</i>, with a copy being also sent via sFTP to a remote server.
+Results files are output locally to <i>[results root]/[run number]/[sample ID]/</i>, with a copy being also sent via SSH/sFTP to a remote server.
 <ul>
   <li><i>*_AnalysisLog.txt</i> - analysis log (short)</li>
 <li><i>Master.log</i> - analysis log (comprehensive)</li>
