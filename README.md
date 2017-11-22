@@ -17,13 +17,6 @@ This pipeline has been modified from the original version and proceeds in a 9-st
 <li>Downsampling / random read sampling - Picard (Broad Institute of MIT and Harvard)</li>
 <li>Variant calling - SAMtools/BCFtools (Li et al., 2009)</li>
 <li>Annotation - Variant Effect predictor (McLaren et al., 2016)</li>
-<li>Customising VCF - custom scripts. This step uses a Python script (FixInDels.py) and specifically performs the following:
-  <ol type="i">  
-    <li>Splits multiallelic sites</li>
-    <li>Sets VCF ID field to a unique value CHR:POS:REF:ALT:ZYGOSITY</li>
-    <li>Modifies insertions from (REF > ALT) <i>T>TGGA</i> to <i>->GGA</i>, and modifies base position accordingly</li>
-    <li>Modifies deletions from (REF > ALT) <i>ACTAA>A</i> to <i>CTAA>-</i>, and modifies base position accordingly</li>
-  </ol></li>
 </ol>
       
 <h1>Requirements</h1>
@@ -72,7 +65,7 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
 <li><i>*_PerBaseDepthBED.bedgraph</i> - per base read depth for each base in each region specified in supplied BED file</li>
 <li><i>*_Aligned_Sorted_PCRDuped_FiltMAPQ.bam</i> - aligned BAM file with sorted reads, PCR duplicates removed, and reads below mapping quality threshold removed</li>
 <li><i>*_Aligned_Sorted_PCRDuped_FiltMAPQ.bam.bai</i> - index for above BAM file</li>
-<li><i>*_Final.vcf</i> - final VCF file, which contains all variants that passed QC, and low quality ones marked as such</li>
+<li><i>*_Final.vcf</i> - final VCF file</li>
 <li><i>*_AnnotationVEP.html</i> - HTML report of variant annotation, with consequences for all known transcript isoforms</li>
 <li><i>*_AnnotationVEP.tsv</i> - as above but in tab-separated values (TSV) format</li>
 </ul>
