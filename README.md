@@ -1,7 +1,7 @@
 # ClinicalGradeDNAseq
 Automated next generation DNA sequencing analysis pipeline suited for clinical tests
 
-This clinical-grade analysis pipeline, <i>ClinicalGradeDNAseq</i>, is based on the work by Blighe, Beauchamp, and colleagues (Blighe et al., 2014) at Sheffield Diagnostic Genetics Service, Sheffield Children's National Health Service (NHS) Foundation Trust, Sheffield, UK, and their efforts to introduce a clinical-grade next generation sequencing (NGS) analysis pipeline fully validated against Sanger di-deoxy sequencing.
+This clinical-grade analysis pipeline, <i>ClinicalGradeDNAseq</i>, is a watered-down and modified version of the work by Blighe, Beauchamp, and colleagues (Blighe et al., 2014) at Sheffield Diagnostic Genetics Service, Sheffield Children's National Health Service (NHS) Foundation Trust, Sheffield, UK, and their efforts to introduce a clinical-grade next generation sequencing (NGS) analysis pipeline fully validated against Sanger di-deoxy sequencing.
 
 The pipeline is built using open source programs mixed with customised scripts. A wrapper script manages command line parameters and then executes the master analysis script. Control is then returned to the wrapper, where results files are transferred to a remote server via SSH/sFTP. A master and concise log is kept, with date- and time-stamps.
 
