@@ -227,8 +227,8 @@ echo "Applying further filtering to called variants..." ;
 echo "Variants filtered out:"
 echo `"${BCFtools_root}"bcftools view "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped_FiltMAPQ.vcf | "${BCFtools_root}"misc/vcfutils.pl varFilter -d "${FilterReadDepthCutoff}" -w 1 -W 3 -a 1 -1 0.05 -2 0.05 -3 0.05 -4 0.05 -e 0.05 -p > "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped_FiltMAPQ_FiltExtra.vcf` ;
 
-#Copy a sorted VCF for import into IGV
-echo `"${VCFtools_root}"vcf-sort "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped_FiltMAPQ_FiltExtra.vcf --chromosomal-order > "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_IGV.vcf` ;
+#Sort the VCF
+echo `"${VCFtools_root}"vcf-sort "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped_FiltMAPQ_FiltExtra.vcf --chromosomal-order > "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Final.vcf` ;
 
 echo "Done." ;
 
@@ -240,23 +240,7 @@ echo "#Analysis step 8:  Annotation#" ;
 echo "##############################" ;
 echo "Beginning analysis step 8 (annotation) on `date`" >> "${Results_root}"/"${RunNumber}"/"${PatientID}"/"${PatientID}"_AnalysisLog.txt ;
 
-echo `"${VEP_root}"vep --input_file "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_IGV.vcf --format vcf --species homo_sapiens --assembly GRCh38 --cache --refseq --fasta "${Ref_FASTA}" --check_ref --offline --bam "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped_FiltMAPQ.bam --output_file "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_AnnotationVEP.tsv --tab --stats_file "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_AnnotationVEP.html --variant_class --sift b --polyphen b --nearest symbol --gene_phenotype --regulatory --numbers --domains --vcf_info_field VEP --hgvs --hgvsg --symbol --tsl --canonical --af --af_1kg --af_esp --af_exac` ;
-
-
-
-echo -e "\n\n" ;
-echo "##########################################################################" ;
-echo "#Analysis step 9:  Customising VCF ID field and changing indel annotation#" ;
-echo "##########################################################################" ;
-echo "Beginning analysis step 9 (customising VCF for haplotype identification) on `date`" >> "${Results_root}"/"${RunNumber}"/"${PatientID}"/"${PatientID}"_AnalysisLog.txt ;
-
-#Run the python script to put a custom ID into the VCF
-python "${Pipeline_root}"/FixInDels.py "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped_FiltMAPQ_FiltExtra.vcf "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped_FiltMAPQ_FiltExtra_Sort.vcf TRUE ;
-
-#Sort the VCFs
-echo `"${VCFtools_root}"vcf-sort "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped_FiltMAPQ_FiltExtra_Sort.vcf --chromosomal-order > "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Final.vcf` ;
-
-echo "Done." ;
+echo `"${VEP_root}"vep --input_file "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Final.vcf --format vcf --species homo_sapiens --assembly GRCh38 --cache --refseq --fasta "${Ref_FASTA}" --check_ref --offline --bam "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped_FiltMAPQ.bam --output_file "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_AnnotationVEP.tsv --tab --stats_file "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_AnnotationVEP.html --variant_class --sift b --polyphen b --nearest symbol --gene_phenotype --regulatory --numbers --domains --vcf_info_field VEP --hgvs --hgvsg --symbol --tsl --canonical --af --af_1kg --af_esp --af_exac` ;
 
 
 
