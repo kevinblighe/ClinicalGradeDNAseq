@@ -1,5 +1,5 @@
 # ClinicalGradeDNAseq
-Automated next generation DNA sequencing analysis pipeline suited for clinical tests
+Automated next generation DNA sequencing analysis pipeline suited for clinical tests, with >99.9% sensitivity to Sanger sequencing at read-depth>18
 
 This clinical-grade analysis pipeline, <i>ClinicalGradeDNAseq</i>, is a watered-down and modified version of the work by Blighe, Beauchamp, and colleagues (Blighe et al., 2014) at Sheffield Diagnostic Genetics Service, Sheffield Children's National Health Service (NHS) Foundation Trust, Sheffield, UK, and their efforts to introduce a clinical-grade next generation sequencing (NGS) analysis pipeline fully validated against Sanger di-deoxy sequencing.
 
