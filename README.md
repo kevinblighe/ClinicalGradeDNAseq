@@ -91,6 +91,6 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
 </ul>
 <h1>Credits</h1>
 <ul>
-  <li>Kevin Blighe (Sheffield Diagnostics Genetics Service)</li>
+  <li>Kevin Blighe (Sheffield Children's NHS Foundation Trust)</li>
   <li>Sheffield Diagnostics Genetics Service</li>
 </ul>
