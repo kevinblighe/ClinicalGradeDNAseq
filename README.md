@@ -90,4 +90,7 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
 <li>McLaren W, Gil L, Hunt S, Riat H, Ritchie G, Thormann A, Flicek P, Cunningham F (2016), The Ensembl Variant Effect Predictor, Genome Biology 17:122.</li>
 </ul>
 <h1>Credits</h1>
-Kevin Blighe; Sheffield Diagnostics Genetics Service
+<ul>
+  <li>Kevin Blighe (Sheffield Diagnostics Genetics Service)</li>
+  <li>Sheffield Diagnostics Genetics Service</li>
+</ul>
