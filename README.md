@@ -1,7 +1,7 @@
 # ClinicalGradeDNAseq
 Automated next generation DNA sequencing analysis pipeline suited for clinical tests, with >99.9% sensitivity to Sanger sequencing at read-depth>18.
 
-This clinical-grade analysis pipeline, <i>ClinicalGradeDNAseq</i>, is a watered-down and modified version of the work by Blighe, Beauchamp, and colleagues (Blighe et al., 2014) at Sheffield Diagnostic Genetics Service, Sheffield Children's National Health Service (NHS) Foundation Trust, Sheffield, UK, and their efforts to introduce a clinical-grade next generation sequencing (NGS) analysis pipeline fully validated against Sanger di-deoxy sequencing.
+This clinical-grade analysis pipeline, <i>ClinicalGradeDNAseq</i>, is a watered-down and modified version of the work by Blighe, Beauchamp, and colleagues at Sheffield Diagnostic Genetics Service, Sheffield Children's National Health Service (NHS) Foundation Trust, Sheffield, UK, and their efforts to introduce a clinical-grade next generation sequencing (NGS) analysis pipeline fully validated against Sanger di-deoxy sequencing.
 
 The pipeline is built using open source programs mixed with customised scripts. A wrapper script manages command line parameters and then executes the master analysis script. Control is then returned to the wrapper, where results files are transferred to a remote server via SSH/sFTP. A master and concise log is kept, with date- and time-stamps.
 
@@ -81,7 +81,6 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
 <h1>References</h1>
 <ul>
   <li>Andrews S, FastQC, https://www.bioinformatics.babraham.ac.uk/projects/fastqc/, last accessed 28th August 2017.</li>
-<li>Blighe K, Beauchamp N, Allen KE, Nesbitt IM, Dawe J, Grafham D, Dalton A (2014), Next Generation Sequencing in the National Health Service England: A Pipeline that Completely Agrees with Sanger, Journal of Cancer Science and Therapy 6: 406-410.</li>
 <li>Broad Institute of MIT and Harvard, Picard, http://broadinstitute.github.io/picard/, last accessed 28th August 2017</li>
 <li>Krueger F, Trim Galore!, https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/, last accessed 28th August 2017.</li>
 <li>Li  H and Durbin R (2009), Fast and accurate short read alignment with Burrows-Wheeler transform, Bioinformatics 25(14): 1754–1760.</li>
