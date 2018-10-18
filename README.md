@@ -1,4 +1,4 @@
-<b><i>NB - this code / pipeline remains mostly untouched since it was first written by me in 2013 / 14! It was designed for a specific purpose and the intention was for it to be used by heavily trained individuals, i.e., NOT general usage. It would be designed differently were it written today. Placing it here on GitHub is primarily to archive it. Although it runs AOK in its current state, anyone re-using this code should be aware of this and make changes as you see fit.</i></b>
+<b><i>NB - this code / pipeline remains mostly untouched since it was first written by me in 2013 / 14! It was designed for a specific purpose and the intention was for it to be used by trained individuals, i.e., NOT general usage. It would be designed differently were it written today. Placing it here on GitHub is primarily to archive it. Although it runs AOK in its current state, anyone re-using this code should be aware of this and make changes as you see fit.</i></b>
 
 # ClinicalGradeDNAseq
 Automated next generation DNA sequencing analysis pipeline 'suited' for clinical tests, with >99.9% sensitivity to Sanger sequencing at read-depth>18 over target regions over interest.
