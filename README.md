@@ -9,7 +9,7 @@ The pipeline is built using open source programs mixed with customised scripts. 
 
 The unique feature of the analysis pipeline that increases sensitivity to Sanger sequencing is in the variant calling step, where a final aligned BAM is split into 3 'sub-BAMs' of 75%, 50%, and 25% random reads. Variants are then called on all 4 BAMs, after which a consensus VCF is produced.
 
-This pipeline has been modified from the original version and proceeds in a 8-step process:
+This pipeline has been modified from the original version and proceeds in an 8-step process:
 <ol type="1">
   <li>Adaptor and read quality trimming - TrimGalore! (Krueger F), FastQC (Andrews S), cutadapt (Martin M, 2011)</li>
 <li>Alignment - bwa mem (Li & Durbin, 2009)</li>
