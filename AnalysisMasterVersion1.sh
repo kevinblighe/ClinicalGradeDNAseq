@@ -94,12 +94,11 @@ echo `"${SAMtools_root}"samtools view -bS "${Results_root}"/"${RunNumber}"/"${Pa
 
 echo `"${SAMtools_root}"samtools sort "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned.bam -o "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted.bam` ;
 
-java -jar "${Picard_root}"picard.jar MarkDuplicates INPUT="${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted.bam OUTPUT="${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDupes.bam ASSUME_SORTED=true METRICS_FILE="${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDupes.txt VALIDATION_STRINGENCY=SILENT ;
+java -jar "${Picard_root}"picard.jar MarkDuplicates INPUT="${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted.bam OUTPUT="${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDupes.bam ASSUME_SORTED=true METRICS_FILE="${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDupes.txt VALIDATION_STRINGENCY=SILENT MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=1000 ;
 
 echo `"${SAMtools_root}"samtools index "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDupes.bam` ;
 
-#echo `"${SAMtools_root}"samtools view -b -F 0x400 "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDupes.bam > "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped.bam` ;
-cp "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDupes.bam "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped.bam ;
+echo `"${SAMtools_root}"samtools view -b -F 0x400 "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDupes.bam > "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped.bam` ;
 
 echo `"${SAMtools_root}"samtools index "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp/"${PatientID}"_Aligned_Sorted_PCRDuped.bam` ;
 
