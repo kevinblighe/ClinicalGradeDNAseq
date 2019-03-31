@@ -32,7 +32,7 @@ This pipeline has been modified from the original version and proceeds in an 8-s
 <h1>Requirements</h1>
 <ul>
   <li>Paired-end FASTQ files</li>
-<li>Chromosome ordered BED file in hg19 / hg38 (BED files can be sorted with sort -k1,1V -k2,2n)</li>
+  <li>Chromosome-ordered and position-sorted BED file in hg19 / hg38 (BED files can be sorted with sort -k1,1V -k2,2n)</li>
   <li>Global installations of Cutadapt and unix2dos (included in dos2unix)</li>
   <li>Valid credentials for returning results files to remote server (username / password) via SSH/sFTP</li>
 </ul>
@@ -52,7 +52,7 @@ Run the ‘PipelineWrapper’ wrapper script, which will check command-line para
 <li>Adaptor for trimming off read ends ('illumina' / 'nextera' / 'small_rna')</li>
 <li>Minimum read depth for calling a variant (integer)</li>
 <li>Minimum allowed mapping quality (integer)</li>
-<li>Stringency for calling variants ('relaxed' / 'normal')</li>
+<li>Stringency for calling variants ('relaxed' / 'normal') (relaxed uses <code>--pval-threshold 1.0</code></li>
 <li>Directory where results will be output (absolute file path)</li>
 <li>User initials (alphanumeric)</li>
 </ol>
@@ -85,7 +85,8 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
   <li>PipelineWrapper.sh, line 138: <i>remoteDir="/remote/SAMBA/share/"</i> - Remote server directory to which results files will be transferred via SSH/sFTP</li>
   <li>PipelineWrapper.sh, line 150, 161: <i>sshpass -e sftp $username@XXX.XXX.XXX.XXX << !</i> - Remote server IP address or host name to which results files will be transferred via SSH/sFTP</li>
   <li>AnalysisMasterVersion1.sh, lines 25-35 - root directories (absolute paths) of required programs</li>
-  <li>AnalysisMasterVersion1.sh, lines 286/304 - min-BQ set to 30 for BCFtools mpileup
+  <li>AnalysisMasterVersion1.sh, lines 286/304 - min-BQ set to 30 for BCFtools mpileup</li>
+  <li>AnalysisMasterVersion1.sh, lines 374 - extra filters for filtering variants via vcfutils.pl (BCFtools)</li>
   <li>AnalysisMasterVersion1.sh, line 396/7 - 'species' and 'assembly' for VEP set to <i>homo_sapiens</i> and <i>GRCh38</i></li>
 </ul>
 
