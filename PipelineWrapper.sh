@@ -117,7 +117,18 @@ mkdir -p -m 777 "${Results_root}"/"${RunNumber}"/"${PatientID}"/tmp ;
 
 echo "Log file is "${Results_root}"/"${RunNumber}"/"${PatientID}"/Master.log" ;
 
-/home/ubuntu/pipeline/AnalysisMasterVersion1.sh "${Read1}" "${Read2}" "${Ref_FASTA}" "${RunNumber}" "${PatientID}" "${BEDfile}" "${TrimmingQualityReadEnds}" "${TrimmingReadLengthMin}" "${TrimmingAdaptor}" "${FilterReadDepthCutoff}" "${FilterMappingQualityCutOff}" "${CallingStringency}" "${Results_root}" "${User}" &> "${Results_root}"/"${RunNumber}"/"${PatientID}"/Master.log ;
+/home/ubuntu/pipeline/AnalysisMasterVersion1.sh "${Read1}" \
+	"${Read2}" \
+	"${Ref_FASTA}" \
+	"${RunNumber}" \
+	"${PatientID}" \
+	"${BEDfile}" \
+	"${TrimmingQualityReadEnds}" "${TrimmingReadLengthMin}" "${TrimmingAdaptor}" \
+	"${FilterReadDepthCutoff}" \
+	"${FilterMappingQualityCutOff}" \
+	"${CallingStringency}" \
+	"${Results_root}" \
+	"${User}" &> "${Results_root}"/"${RunNumber}"/"${PatientID}"/Master.log ;
 
 echo `unix2dos "${Results_root}"/"${RunNumber}"/"${PatientID}"/Master.log` ;
 
