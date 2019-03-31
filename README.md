@@ -1,7 +1,7 @@
 <b><i>NB - this code / pipeline remains mostly untouched since it was first written by me in 2013 / 14! It was designed for a specific purpose, i.e., NOT general usage. It would be designed differently were it written today (my main gripe about it is how I set up the command line parameter parsing). Placing it here on GitHub is primarily to archive it. Although it runs AOK in its current state, anyone re-using this code should be aware of this and make changes as you see fit.</i></b>
 
 # ClinicalGradeDNAseq
-Automated next generation DNA sequencing analysis pipeline 'suited' for clinical tests, with >99.9% sensitivity to Sanger sequencing at read-depth>18 over target regions over interest.
+Automated next generation DNA sequencing analysis pipeline 'suited' for clinical tests, with >99.9% sensitivity to Sanger sequencing for Single Nucleitide Variants (SNVs) at read-depth>18 over target regions over interest.
 
 This clinical-grade analysis pipeline, <i>ClinicalGradeDNAseq</i>, is a watered-down and modified version of the work by Blighe, Beauchamp, and colleagues at Sheffield Diagnostic Genetics Service, Sheffield Children's National Health Service (NHS) Foundation Trust, Sheffield, UK, and their efforts to introduce a clinical-grade next generation sequencing (NGS) analysis pipeline fully validated against Sanger di-deoxy sequencing.
 
