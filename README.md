@@ -2,9 +2,9 @@
   <ol><li>improved command line parameter parsing</li>
     <li>improved error handling, for example, checking output of each code section and making a decision to proceed or not</li></ol>
 
-Although it runs AOK in its current state, anyone re-using this code should make changes as you see fit.</i>
+Although it runs AOK in its current state, anyone re-using this code should make changes as you see fit.
 
-I update this pipeline as I re-use it myself in order to keep it maintained on a low level in line with new program versions that are released.
+I update this pipeline as I re-use it myself in order to keep it maintained on a low level in line with new program versions that are released.</i>
 
 <b>Last update: Sunday, 31st March, 2019 @ 02:18 BST (GMT+1)</b>
 
