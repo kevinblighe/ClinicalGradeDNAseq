@@ -1,7 +1,9 @@
-<b><i>NB - this code / pipeline remains mostly untouched since it was first written by me in 2013 / 14! It was designed for a specific purpose, i.e., NOT general usage. It would be designed differently were it written today (my main gripe about it is how I set up the command line parameter parsing). Placing it here on GitHub is primarily to archive it. Although it runs AOK in its current state, anyone re-using this code should be aware of this and make changes as you see fit.</i></b>
+<i>NB - this code / pipeline remains mostly untouched since it was first written by me in 2013 / 14! It was designed for a specific purpose, i.e., not general usage. It would be designed differently were it written today (my main gripe about it is how I set up the command line parameter parsing). Placing it here on GitHub is primarily to archive it. Although it runs AOK in its current state, anyone re-using this code should be aware of this and make changes as you see fit.</i>
+
+Last update: Sunday, 31st March, 2019 @ 00:41 GMT
 
 # ClinicalGradeDNAseq
-Automated next generation DNA sequencing analysis pipeline 'suited' for clinical tests, with >99.9% sensitivity to Sanger sequencing for Single Nucleotide Variants (SNVs) at read-depth>18 over target regions over interest.
+Automated next generation DNA sequencing analysis pipeline 'suited' for clinical tests, with >99.9% sensitivity to Sanger sequencing for <b><i>Single Nucleotide Variants</i></b> (SNVs) at read-depth>18 over target regions over interest.
 
 This clinical-grade analysis pipeline, <i>ClinicalGradeDNAseq</i>, is a watered-down and modified version of the work by Blighe, Beauchamp, and colleagues at Sheffield Diagnostic Genetics Service, Sheffield Children's National Health Service (NHS) Foundation Trust, Sheffield, UK, and their efforts to introduce a clinical-grade next generation sequencing (NGS) analysis pipeline fully validated against Sanger di-deoxy sequencing.
 
@@ -77,7 +79,8 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
   <li>PipelineWrapper.sh, line 138: <i>remoteDir="/remote/SAMBA/share/"</i> - Remote server directory to which results files will be transferred via SSH/sFTP</li>
   <li>PipelineWrapper.sh, line 150, 161: <i>sshpass -e sftp $username@XXX.XXX.XXX.XXX << !</i> - Remote server IP address or host name to which results files will be transferred via SSH/sFTP</li>
   <li>AnalysisMasterVersion1.sh, lines 25-35 - root directories (absolute paths) of required programs</li>
-  <li>AnalysisMasterVersion1.sh, line 243 - genome for VEP is set to <i>GRCh38</i></li>
+  <li>AnalysisMasterVersion1.sh, lines 286/304 - min-BQ set to 30 for BCFtools mpileup
+  <li>AnalysisMasterVersion1.sh, line 396/7 - 'species' and 'assembly' for VEP set to <i>homo_sapiens</i> and <i>GRCh38</i></li>
 </ul>
 
 
