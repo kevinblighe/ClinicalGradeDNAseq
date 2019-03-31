@@ -8,7 +8,7 @@ I update this pipeline as I re-use it myself in order to keep it maintained on a
 
 <b>Last update: Sunday, 31st March, 2019 @ 00:41 GMT</b>
 
-# ClinicalGradeDNAseq
+# ClinicalGradeDNAseq - random read sampling to improve sensitivity
 Automated next generation DNA sequencing analysis pipeline 'suited' for clinical tests, with >99.9% sensitivity to Sanger sequencing for <b><i>Single Nucleotide Variants</i></b> (SNVs) at read-depth>18 over target regions over interest.
 
 This clinical-grade analysis pipeline, <i>ClinicalGradeDNAseq</i>, is a watered-down and modified version of the work by Blighe, Beauchamp, and colleagues at Sheffield Diagnostic Genetics Service, Sheffield Children's NHS Foundation Trust, Sheffield, UK, and their efforts to introduce a clinical-grade next generation sequencing (NGS) analysis pipeline fully validated against Sanger di-deoxy sequencing.
