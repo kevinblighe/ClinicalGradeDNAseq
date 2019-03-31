@@ -4,9 +4,7 @@
 
 Placing the pipeline here on GitHub is primarily to archive it. Although it runs AOK in its current state, anyone re-using this code should make changes as you see fit.</i>
 
-I update this pipeline as I re-use it myself in order to keep it maintained on a low level in line with new program versions that are released.
-
-<b>Last update: Sunday, 31st March, 2019 @ 00:41 GMT</b>
+I update this pipeline as I re-use it myself in order to keep it maintained on a low level in line with new program versions that are released. <b>Last update: Sunday, 31st March, 2019 @ 02:09 BST (GMT+1)</b>
 
 # ClinicalGradeDNAseq - random read sampling to improve sensitivity
 Automated next generation DNA sequencing analysis pipeline 'suited' for clinical tests, with >99.9% sensitivity to Sanger sequencing for <b><i>Single Nucleotide Variants</i></b> (SNVs) at read-depth>18 over target regions over interest.
@@ -23,7 +21,7 @@ This pipeline proceeds in an 8-step process:
 <li>Alignment - bwa mem (Li & Durbin, 2009)</li>
 <li>Marking and removing PCR duplicates - Picard (Broad Institute of MIT and Harvard), SAMtools (Li et al., 2009)</li>
 <li>Remove low mapping quality reads - SAMtools (Li et al., 2009)</li>
-<li>QC - SAMtools (Li et al., 2009), custom scripts</li>
+<li>QC - SAMtools (Li et al., 2009), BEDTools (Quinlan & Hall, 2010), custom scripts</li>
 <li>Downsampling / random read sampling - Picard (Broad Institute of MIT and Harvard)</li>
 <li>Variant calling - SAMtools/BCFtools (Li et al., 2009)</li>
 <li>Annotation - Variant Effect predictor (McLaren et al., 2016)</li>
@@ -52,7 +50,7 @@ Run the ‘PipelineWrapper’ wrapper script, which will check command-line para
 <li>Adaptor for trimming off read ends ('illumina' / 'nextera' / 'small_rna')</li>
 <li>Minimum read depth for calling a variant (integer)</li>
 <li>Minimum allowed mapping quality (integer)</li>
-<li>Stringency for calling variants ('relaxed' / 'normal') (relaxed uses <code>--pval-threshold 1.0</code></li>
+<li>Stringency for calling variants ('relaxed' / 'normal') (relaxed uses <code>--pval-threshold 1.0</code> with BCFtools call)</li>
 <li>Directory where results will be output (absolute file path)</li>
 <li>User initials (alphanumeric)</li>
 </ol>
@@ -72,6 +70,7 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
 <li><i>*_CoverageTotal.bedgraph</i> - coverage for all mapped locations (contiguous bases at same read depth are merged into regions)</li>
 <li><i>*_MeanCoverageBED.bedgraph</i> - mean read depth for each region specified in supplied BED file</li>
 <li><i>*_PerBaseDepthBED.bedgraph</i> - per base read depth for each base in each region specified in supplied BED file</li>
+<li><i>*_PercentGenomeCovered.txt</i> - percentage of reference genome covered by reads.</li>
 <li><i>*_Aligned_Sorted_PCRDuped_FiltMAPQ.bam</i> - aligned BAM file with sorted reads, PCR duplicates removed, and reads below mapping quality threshold removed</li>
 <li><i>*_Aligned_Sorted_PCRDuped_FiltMAPQ.bam.bai</i> - index for above BAM file</li>
 <li><i>*_Final.vcf</i> - final VCF file</li>
@@ -94,12 +93,13 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
 <h1>References</h1>
 <ul>
   <li>Andrews S, FastQC, https://www.bioinformatics.babraham.ac.uk/projects/fastqc/, last accessed 28th August 2017.</li>
-<li>Broad Institute of MIT and Harvard, Picard, http://broadinstitute.github.io/picard/, last accessed 28th August 2017</li>
-<li>Krueger F, Trim Galore!, https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/, last accessed 28th August 2017.</li>
-<li>Li  H and Durbin R (2009), Fast and accurate short read alignment with Burrows-Wheeler transform, Bioinformatics 25(14): 1754–1760.</li>
-<li>Li H, Handsaker B, Wysoker A, Fennell T, Ruan J, Homer N, Marth G, Abecasis G, Durbin R; 1000 Genome Project Data Processing Subgroup (2009), The Sequence Alignment/Map format and SAMtools, Bioinformatics 25(16):2078-9.</li>
-<li>Martin M (2011), Cutadapt removes adapter sequences from high-throughput sequencing reads, EMBnet.journal 17(1): 10-12.</li>
-<li>McLaren W, Gil L, Hunt S, Riat H, Ritchie G, Thormann A, Flicek P, Cunningham F (2016), The Ensembl Variant Effect Predictor, Genome Biology 17:122.</li>
+  <li>Broad Institute of MIT and Harvard, Picard, http://broadinstitute.github.io/picard/, last accessed 28th August 2017</li>
+  <li>Krueger F, Trim Galore!, https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/, last accessed 28th August 2017.</li>
+  <li>Li H and Durbin R (2009), Fast and accurate short read alignment with Burrows-Wheeler transform, Bioinformatics 25(14): 1754–1760.</li>
+  <li>Li H, Handsaker B, Wysoker A, Fennell T, Ruan J, Homer N, Marth G, Abecasis G, Durbin R; 1000 Genome Project Data Processing Subgroup (2009), The Sequence Alignment/Map format and SAMtools, Bioinformatics 25(16): 2078-9.</li>
+  <li>Martin M (2011), Cutadapt removes adapter sequences from high-throughput sequencing reads, EMBnet.journal 17(1): 10-12.</li>
+  <li>McLaren W, Gil L, Hunt S, Riat H, Ritchie G, Thormann A, Flicek P, Cunningham F (2016), The Ensembl Variant Effect Predictor, Genome Biology 17: 122.</li>
+  <li>Quinlan AR & Hall IM (2010), BEDTools: a flexible suite of utilities for comparing genomic features, Bioinformatics 26(6): 841-2.</li>
 </ul>
 <h1>Credits</h1>
 <ul>
