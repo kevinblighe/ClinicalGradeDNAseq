@@ -17,7 +17,7 @@ The pipeline is built using open source programs mixed with customised scripts. 
 
 <b>[Key point]</b> The unique feature of the analysis pipeline that increases sensitivity to Sanger sequencing is in the variant calling step, where a final aligned BAM is split into 3 'sub-BAMs' of 75%, 50%, and 25% random reads. Variants are then called on all 4 BAMs, after which a consensus VCF is produced.
 
-This pipeline has been modified from the original version and proceeds in an 8-step process:
+This pipeline proceeds in an 8-step process:
 <ol type="1">
   <li>Adaptor and read quality trimming - TrimGalore! (Krueger F), FastQC (Andrews S), cutadapt (Martin M, 2011)</li>
 <li>Alignment - bwa mem (Li & Durbin, 2009)</li>
@@ -106,5 +106,7 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
   <li>Kevin Blighe (Sheffield Children's NHS Foundation Trust)</li>
   <li>Nick Beauchamp (Sheffield Children's NHS Foundation Trust)</li>
   <li>Darren Grafham (Sheffield Children's NHS Foundation Trust)</li>
+  <li>Lucy Crookes (Sheffield Children's NHS Foundation Trust)</li>
+  <li>Sasirekha Paliswamy ('Sashi') (Sheffield Children's NHS Foundation Trust)</li>
   <li>Sheffield Diagnostics Genetics Service</li>
 </ul>
