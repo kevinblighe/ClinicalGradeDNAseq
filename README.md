@@ -15,7 +15,7 @@ This clinical-grade analysis pipeline, <i>ClinicalGradeDNAseq</i>, is a watered-
 
 The pipeline is built using open source programs mixed with customised scripts. A wrapper script manages command line parameters and then executes the master analysis script. Control is then returned to the wrapper, where results files are transferred to a remote server via SSH/sFTP. A master and concise log is kept, with date- and time-stamps. Results directory structure is formed based on the run number and patient ID.
 
-The unique feature of the analysis pipeline that increases sensitivity to Sanger sequencing is in the variant calling step, where a final aligned BAM is split into 3 'sub-BAMs' of 75%, 50%, and 25% random reads. Variants are then called on all 4 BAMs, after which a consensus VCF is produced.
+<b>[Key point]</b> The unique feature of the analysis pipeline that increases sensitivity to Sanger sequencing is in the variant calling step, where a final aligned BAM is split into 3 'sub-BAMs' of 75%, 50%, and 25% random reads. Variants are then called on all 4 BAMs, after which a consensus VCF is produced.
 
 This pipeline has been modified from the original version and proceeds in an 8-step process:
 <ol type="1">
