@@ -6,7 +6,7 @@ Although it runs AOK in its current state, anyone re-using this code should make
 
 I update this pipeline as I re-use it myself in order to keep it maintained on a low level in line with new program versions that are released.</i>
 
-<b>Last update: Sunday, 31st March, 2019 @ 02:18 BST (GMT+1)</b>
+<b>Last update: Sunday, 31st March, 2019 @ 02:20 BST (GMT+1)</b>
 
 # ClinicalGradeDNAseq - random read sampling to improve sensitivity
 Automated next generation DNA sequencing analysis pipeline 'suited' for clinical tests, with >99.9% sensitivity to Sanger sequencing for <b><i>Single Nucleotide Variants (SNVs)</i></b> at read-depth>18 over target regions over interest.
@@ -21,7 +21,7 @@ This pipeline proceeds in an 8-step process:
 <ol type="1">
   <li>Adaptor and read quality trimming - <i>TrimGalore!</i> (Krueger F), <i>FastQC</i> (Andrews S), <i>cutadapt</i> (Martin M, 2011)</li>
   <li>Alignment - <i>bwa mem</i> (Li & Durbin, 2009)</li>
-  <li>Marking and removing PCR duplicates - <i>Picard</i> (Broad Institute of MIT and Harvard), SAMtools (Li et al., 2009)</li>
+  <li>Marking and removing PCR duplicates - <i>Picard</i> (Broad Institute of MIT and Harvard), <i>SAMtools</i> (Li et al., 2009)</li>
   <li>Remove low mapping quality reads - <i>SAMtools</i> (Li et al., 2009)</li>
   <li>QC - <i>SAMtools</i> (Li et al., 2009), <i>BEDTools</i> (Quinlan & Hall, 2010), custom scripts</li>
   <li>Downsampling / random read sampling - <i>Picard</i> (Broad Institute of MIT and Harvard)</li>
