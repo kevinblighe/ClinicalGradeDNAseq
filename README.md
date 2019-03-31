@@ -74,8 +74,8 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
 <h1>Hard-coded sections of code</h1>
 <ul>
   <li>PipelineWrapper.sh, line 120: <i>/home/ubuntu/pipeline/AnalysisMasterVersion1.sh "${Read1}" "${Read2}" ...</i> - absolute path filename for AnalysisMasterVersion1.sh</li>
-  <li>PipelineWrapper.sh, line 127: <i>remoteDir="/remote/SAMBA/share/"</i> - Remote server directory to which results files will be transferred via SSH/sFTP</li>
-  <li>PipelineWrapper.sh, line 139, 150: <i>sshpass -e sftp $username@XXX.XXX.XXX.XXX << !</i> - Remote server IP address or host name to which results files will be transferred via SSH/sFTP</li>
+  <li>PipelineWrapper.sh, line 138: <i>remoteDir="/remote/SAMBA/share/"</i> - Remote server directory to which results files will be transferred via SSH/sFTP</li>
+  <li>PipelineWrapper.sh, line 150, 161: <i>sshpass -e sftp $username@XXX.XXX.XXX.XXX << !</i> - Remote server IP address or host name to which results files will be transferred via SSH/sFTP</li>
   <li>AnalysisMasterVersion1.sh, lines 25-35 - root directories (absolute paths) of required programs</li>
   <li>AnalysisMasterVersion1.sh, line 243 - genome for VEP is set to <i>GRCh38</i></li>
 </ul>
