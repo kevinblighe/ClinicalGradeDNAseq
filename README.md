@@ -109,6 +109,6 @@ Results files are output locally to <i>[results root]/[run number]/[sample ID]/<
   <li>Nick Beauchamp (Sheffield Children's NHS Foundation Trust)</li>
   <li>Darren Grafham (Sheffield Children's NHS Foundation Trust)</li>
   <li>Lucy Crookes (Sheffield Children's NHS Foundation Trust)</li>
-  <li>Sasirekha Paliswamy ('Sashi') (Sheffield Children's NHS Foundation Trust)</li>
+  <li>Sasirekha Palaniswamy ('Sashi') (Sheffield Children's NHS Foundation Trust)</li>
   <li>Sheffield Diagnostics Genetics Service</li>
 </ul>
