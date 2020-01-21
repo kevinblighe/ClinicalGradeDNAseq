@@ -1,4 +1,4 @@
-<i>NB - this code / pipeline structure remains mostly untouched since it was first written by me in 2013 / 14 while working in the National Health Service (NHS) England - it would be designed differently were it written today. The main areas where it could be developed are:
+<i>NB - this code / pipeline structure remains mostly untouched since it was first written by me in 2013 / 14 while working in the National Health Service (NHS) England - it would be designed differently were it written today, and likely using a proper workflow manager. The main areas where it could be developed are:
   <ol><li>improved command line parameter parsing</li>
     <li>improved error handling, for example, checking output of each code section and making a decision to proceed or not</li></ol>
 
